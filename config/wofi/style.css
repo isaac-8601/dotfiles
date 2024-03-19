@@ -1,0 +1,74 @@
+* {
+   font-family: Cascadia Code;
+   font-weight:400;
+}
+
+
+window {
+   margin: 16px;
+   border: 3px solid #a7c080;
+   background-color: #272e33;
+}
+   
+#input {
+   margin: 8px;
+   padding: 8px;
+   border: none;
+   color: #d3c6aa;
+   background-color: #2e383c;
+   border-radius: 0;
+}
+   
+#inner-box {
+   margin: 8px;
+   border: none;
+}
+   
+#outer-box {
+   margin: 4px;
+   border: none;
+   background-color: #272e33;
+}
+   
+#scroll {
+   margin: 0px;
+   border: none;
+}
+   
+#text {
+   margin: 4px;
+   border: none;
+   color: #d3c6aa;
+} 
+   
+
+#img {
+   margin-right: 4px;
+}
+
+#entry.activatable #text {
+   color: #83c092;
+}
+   
+#entry {
+   border-radius: 0;
+}
+  
+#entry > * {
+   color: #d3c6aa;
+}
+   
+#entry:selected {
+   color: #a7c080;
+   background-color: #3c4841;
+}
+   
+#entry:selected #text {
+   color:#a7c080;
+   font-weight: bold;
+   background:none;
+}
+
+#entry:selected #img {
+   background:none;
+}

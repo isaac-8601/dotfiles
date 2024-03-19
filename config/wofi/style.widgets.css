@@ -1,0 +1,59 @@
+
+@define-color highlight #a7c080;
+@define-color base1  #1e2326;
+@define-color base2  #272e33;
+@define-color base3  #2e383c;
+
+* {
+    font-family: Cascadia Code;
+    font-weight:400;
+}
+
+#window {
+    border: 2px solid @highlight;
+    margin: 0px;
+    overflow: hidden;
+}
+
+#outer-box {
+    margin: 4px;
+    padding:4px 6px 6px;
+    background-color: @base2;
+}
+
+#text {
+    padding: 5px 0;
+    color: #d3c6aa;
+}
+
+#entry.activatable #text {
+    color: #83c092;
+ }
+    
+ #entry {
+    border-radius: 0;
+ }
+
+ /* needed because there's a black box taking up space at the top of the window. No documentation found for removing that. */
+ entry:nth-child(1) {
+    margin-top:-22px;
+ }
+
+   
+ #entry > * {
+    color: #d3c6aa;
+ }
+
+#text { padding-left:8px;}
+    
+ #entry:selected {
+    color: #a7c080;
+    background-color: #3c4841;
+ }
+
+    
+ #entry:selected #text {
+    color:#a7c080;
+    font-weight: bold;
+    background:none;
+ }

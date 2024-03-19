@@ -1,0 +1,232 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+
+@define-color highlight #A7C080;
+@define-color base1  #272e33;
+
+@keyframes blink-warning {
+    70% {
+        color: white;
+    }
+
+    to {
+        color: white;
+        background-color: #e69875;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: white;
+    }
+
+    to {
+        color: white;
+        background-color: #e67e80;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 1px;
+    padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+    background: rgba(39,46,51,.8);
+    color: #d3c6aa;
+    font-family: Cascadia Code, Cantarell, Noto Sans, "Font Awesome 5 Free", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+
+}
+
+
+/* Every modules */
+#battery,
+#clock,
+#backlight,
+#cpu,
+#custom-keyboard-layout,
+#memory,
+#mode,
+#custom-weather,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#idle_inhibitor,
+#custom-PBPbattery {
+    padding:0.5rem 0.6rem;
+    margin: 1px 0px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Modules styles
+ * -------------------------------------------------------------------------- */
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning {
+    color: #e69875;
+}
+
+#battery.critical {
+    color: #e67e80;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#clock {
+    font-weight:bold;
+}
+
+#cpu.warning {
+    color: #e69875;
+}
+
+#cpu.critical {
+    color: #e67e80;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.warning {
+    color: orange;
+ }
+
+#memory.critical {
+    color: red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+#mode {
+    background: @highlight;
+    border-bottom: 3px transparent;
+    color:white;
+    margin-left: 5px;
+    padding:7;
+}
+
+#network.disconnected {
+    color: orange;
+}
+
+#pulseaudio {
+    padding-top:6px;
+}
+
+#pulseaudio.muted {
+    color: @highlight;
+}
+
+#temperature.critical {
+    color: red;
+}
+
+#window {
+    font-weight: 400;
+}
+
+#workspaces {
+    font-size:13px;
+    font-weight:bold;
+    margin-right:16px;
+}
+
+
+#workspaces button {
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #d3cdaa;
+    background: none;
+}
+
+#workspaces button:hover {
+    background-color: #414b50;
+    box-shadow:inherit;
+    text-shadow:inherit;
+}
+
+#workspaces button.focused {
+    color: #1e2326;
+    background-color: #a7c080;
+}
+
+#workspaces button.focused:hover {
+    color:#a7c080;
+    background: #4f5b58;
+}
+
+#workspaces button.urgent {
+    background-color: #493b40;
+    color: #e67e80;
+}
+
+#workspaces button.urgent:hover {
+    background-color: #414b50;
+    color: #e67e80;
+}
+
+
+
+
+
+#custom-power {
+    margin-left:15px;
+    margin-right:15px;
+    font-size:15px;
+}
+
+#custom-launcher {
+    font-size:15px;
+    margin-left:15px;
+    margin-right:10px;
+}
+
+#backlight.icon {
+    padding-right:1px;
+    font-size: 13px;
+}
+
+#custom-weather {
+    font-weight: bold;
+    font-family:"Cascadia Code";
+}
