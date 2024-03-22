@@ -13,8 +13,8 @@ input type:touchpad {
 # Read `man 5 sway-input` for more information about this section.
 #
 input type:keyboard {
-    xkb_layout us(dvorak),ru(phonetic_dvorak)
-    xkb_options caps:backspace,grp:alt_space_toggle
+    xkb_layout us
+    xkb_options grp:alt_space_toggle
 }
 
 #exec_always {
