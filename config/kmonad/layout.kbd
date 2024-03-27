@@ -26,12 +26,117 @@
                                                          left down right
 )
 
+(defalias
+  ;; home row mods for dvorak
+  hm_a (tap-hold-next-release 200 a lalt)
+  hm_o (tap-hold-next-release 200 o lctl)
+  hm_e (tap-hold-next-release 200 e lmet)
+  hm_u (tap-hold-next-release 200 u lsft)
+
+  hm_h (tap-hold-next-release 200 h rsft)
+  hm_t (tap-hold-next-release 200 t rmet)
+  hm_n (tap-hold-next-release 200 n rctl)
+  hm_s (tap-hold-next-release 200 s ralt)
+
+  ;; other layer mods
+  ;; lt_spc 
+
+  ;; combos
+  ;;
+
+  ;; bspc and tab
+  cm_dot (tap-hold-next 12 . (layer-toggle dot_cm) :timeout-button .)
+  cm_p (tap-hold-next 12 p (layer-toggle p_cm) :timeout-button p)
+  cm_com (tap-hold-next 12 , (layer-toggle com_cm) :timeout-button ,)
+
+  ;; esc
+
+  cm_m (tap-hold-next 12 m (layer-toggle m_cm) :timeout-button m)
+  cm_w (tap-hold-next 12 w (layer-toggle w_cm) :timeout-button w)
+   
+)
+
 (deflayer dvorak
   esc  f1  f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  del
   grv  1    2    3    4    5    6    7    8    9    0    [    ]    prnt
-  tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
-  bspc a    o    e    u    i    d    h    t    n    s    -    ret
-  lsft ;    q    j    k    x    b    m    w    v    z    rsft
-  lctl - lmet lalt           spc            ralt  rctl  up
+  tab  '    @cm_com    @cm_dot    @cm_p   y    f    g    c    r    l    /    =    \
+  bspc @hm_a    @hm_o    @hm_e    @hm_u    i    d    @hm_h    @hm_t    @hm_n    @hm_s    -    ret
+  lsft ;    q    j    k    x    b    @cm_m    @cm_w    v    z    rsft
+  lctl _ lmet lalt           spc            ralt  rctl         up
                                                          left down right
 )
+
+;; COMBO assistance layers
+(deflayer p_cm
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _   bspc   _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _             _                _     _     _
+                                                        _   _   _
+)
+
+(deflayer dot_cm
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    tab    _    bspc    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _             _                _     _     _
+                                                        _   _   _
+)
+
+(deflayer com_cm
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    tab  _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _             _                _     _     _
+                                                        _   _   _
+)
+
+(deflayer m_cm
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    esc    _    _    _
+  _    _    _    _             _                _     _     _
+                                                        _   _   _
+)
+
+(deflayer w_cm
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    esc  _    _    _    _
+  _    _    _    _             _                _     _     _
+                                                        _   _   _
+)
+
+;; layer of blanks to copy and paste for easier layer creation
+(deflayer blanks
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _             _                _     _     _
+                                                        _   _   _
+)
+
+;; layer for navigation and mouse actions
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    left    down    up    right    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _             _                _     _     _
+                                                        _   _   _
+)
+
+
