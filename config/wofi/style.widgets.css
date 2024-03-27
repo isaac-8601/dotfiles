@@ -47,13 +47,13 @@
 #text { padding-left:8px;}
     
  #entry:selected {
-    color: #a7c080;
-    background-color: #3c4841;
+    color: #272e33;
+    background-color: #a7c080;
  }
 
     
  #entry:selected #text {
-    color:#a7c080;
+    color:#272e33;
     font-weight: bold;
     background:none;
  }
