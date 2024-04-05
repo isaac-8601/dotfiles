@@ -234,8 +234,8 @@ exec swayidle -w\
 #
 # Screenshots
 #
-    bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
-    bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
+    bindsym print exec grim -g "$(slurp -d)" # select area
+    bindsym Shift+print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') #screenshot current focused screen
 
 #
 # Start-up apps
