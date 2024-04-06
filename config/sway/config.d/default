@@ -209,6 +209,18 @@ exec swayidle -w\
     bindsym --whole-window --border $mod+Shift+button5 resize grow width 5 px or 5 ppt
 
 #
+# Scale current screen
+#
+
+    bindsym $mod+Control+0 exec swaymsg output - scale 1.0
+    bindsym $mod+Control+1 exec swaymsg output - scale 1.2
+    bindsym $mod+Control+2 exec swaymsg output - scale 1.4
+    bindsym $mod+Control+3 exec swaymsg output - scale 1.5
+    bindsym $mod+Control+4 exec swaymsg output - scale 1.8
+    bindsym $mod+Control+5 exec swaymsg output - scale 2.0
+
+
+#
 # Volume
 #
     bindsym --locked XF86AudioRaiseVolume exec pamixer -ui 2
