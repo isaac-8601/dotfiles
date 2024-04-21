@@ -1,0 +1,3 @@
+[submodule "/home/user/Sites/dotfiles/config/mpv/scripts/file-browser"]
+	path = /home/user/Sites/dotfiles/config/mpv/scripts/file-browser
+	url = https://github.com/CogentRedTester/mpv-file-browser
