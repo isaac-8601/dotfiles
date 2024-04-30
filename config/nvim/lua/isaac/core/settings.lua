@@ -4,6 +4,7 @@ vim.opt.expandtab = true
 vim.o.tabstop = indent
 
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
