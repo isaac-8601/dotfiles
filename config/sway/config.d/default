@@ -219,7 +219,13 @@ exec swayidle -w\
     bindsym $mod+Control+4 exec swaymsg output - scale 1.8
     bindsym $mod+Control+5 exec swaymsg output - scale 2.0
 
+#
+# Rotate current screen
+#
 
+    bindsym $mod+Control+r exec swaymsg output - transform 0 # Reset
+    bindsym $mod+Control+c exec swaymsg output - transform 90 # Clockwise
+    bindsym $mod+Control+a exec swaymsg output - transform 270 # Anticlockwise
 #
 # Volume
 #
